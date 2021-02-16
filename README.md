@@ -1,6 +1,36 @@
 # camunda-community-hub-probot
 
-> A GitHub App built with [Probot](https://github.com/probot/probot) that automatically labels issues and allows contributors and Maintainers to add labels to issues using / commands.
+## Add label to issues with a bot
+
+Usage:
+
+```
+/lm add label[, label1, ... ]
+```
+
+> A GitHub App built with [Probot](https://github.com/probot/probot) that allows users to add issue labels to Camunda Community Hub extensions.
+
+## Setup
+
+```sh
+# Install dependencies
+npm install
+
+# Run the bot
+npm start
+```
+
+## Docker
+
+```sh
+# 1. Build container
+docker build -t camunda-community-hub-probot .
+
+# 2. Start container
+docker run -e APP_ID=<app-id> -e PRIVATE_KEY=<pem-value> camunda-community-hub-probot
+```
+
+## Contributing
 
 If you have suggestions for how camunda-community-hub-probot could be improved, or want to report a bug, open an issue! We'd love all and any contributions.
 

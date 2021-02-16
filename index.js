@@ -2,6 +2,8 @@
  * This is the main entrypoint to your Probot app
  * @param {import('probot').Probot} app
  */
+const commands = require('probot-commands')
+
 module.exports = (app) => {
   // Your code here
   const commands = require('probot-commands')
