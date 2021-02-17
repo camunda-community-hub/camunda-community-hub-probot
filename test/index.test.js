@@ -44,6 +44,7 @@ describe("My Probot app", () => {
 
       // Test that a comment is posted
       .post("/repos/hiimbex/testing-things/issues/1/comments", (body) => {
+        console.log({ body })
         expect(body).toMatchObject(issueCreatedBody);
         return true;
       })
