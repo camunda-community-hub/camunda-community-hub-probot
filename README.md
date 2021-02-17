@@ -1,6 +1,8 @@
+<img src="https://img.shields.io/badge/Lifecycle-Proof%20of%20Concept-blue">
+
 # camunda-community-hub-probot
 
-## Add label to issues with a bot
+## Add labels automatically (or manually) to issues with a bot
 
 Usage:
 
