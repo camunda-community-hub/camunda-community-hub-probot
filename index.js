@@ -18,7 +18,6 @@ module.exports = (app) => {
   });
   app.on("issue_comment.created", async context => { //gfg
     context.log.info("Issue comment created callback");
-
   });
   /** lm command processor */
   commands(app, "lm", (context, command) => {
@@ -45,9 +44,8 @@ module.exports = (app) => {
   });
 };
 
+// For more information on building apps:
+// https://probot.github.io/docs/
 
-  // For more information on building apps:
-  // https://probot.github.io/docs/
-
-  // To get your app running against GitHub, see:
-  // https://probot.github.io/docs/development/
+// To get your app running against GitHub, see:
+// https://probot.github.io/docs/development/
