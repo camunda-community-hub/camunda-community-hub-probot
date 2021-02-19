@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/Lifecycle-Proof%20of%20Concept-blue">
+<img src="https://img.shields.io/badge/Lifecycle-Proof%20of%20Concept-blueviolet">
 
 # camunda-community-hub-probot
 
