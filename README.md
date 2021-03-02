@@ -2,12 +2,12 @@
 
 # camunda-community-hub-probot
 
-## Add labels automatically (or manually) to issues with a bot
+## The Camunda Community Hub Probot allows you to quickly add labels to issues by commenting and typing a slash command.
 
 Usage:
 
 ```
-/lm add label[, label1, ... ]
+/lm add label1, label2, label3
 ```
 
 > A GitHub App built with [Probot](https://github.com/probot/probot) that allows users to add issue labels to Camunda Community Hub extensions.
