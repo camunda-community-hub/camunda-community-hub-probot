@@ -4,11 +4,13 @@
 
 ## The Camunda Community Hub Probot allows you to quickly add labels to issues by commenting and typing a slash command.
 
-Usage: To add a label to an open issue, in the 'Leave a Comment,' space, enter the following
+Usage: To add a label to an open issue, in the 'Leave a Comment' space enter the following:
 
 ```
 /lm add label1, label2, label3
 ```
+Once your comment is posted, after a few moments, the bot should apply the label you specified. To see the list of labels available to you in the Camunda Community Hub, please review our [steps for issue triage and labelling](https://github.com/camunda-community-hub/community/blob/main/issue-triage.md). For more information on extension lifecycles and how to implement them, please [read the doumentation](https://github.com/camunda-community-hub/community/blob/main/extension-lifecycle.md).
+
 ## Setup
 
 ```sh
