@@ -1,17 +1,15 @@
 <img src="https://img.shields.io/badge/Lifecycle-Proof%20of%20Concept-blueviolet">
 
 # camunda-community-hub-probot
+> A GitHub App built with [Probot](https://github.com/probot/probot) 
 
 ## The Camunda Community Hub Probot allows you to quickly add labels to issues by commenting and typing a slash command.
 
-Usage:
+Usage: To add a label to an open issue, in the 'Leave a Comment,' space, enter the following
 
 ```
 /lm add label1, label2, label3
 ```
-
-> A GitHub App built with [Probot](https://github.com/probot/probot) that allows users to add issue labels to Camunda Community Hub extensions.
-
 ## Setup
 
 ```sh
