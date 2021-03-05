@@ -6,3 +6,5 @@ npm-debug.log
 coverage
 lib
 .vscode
+scratch
+dist
