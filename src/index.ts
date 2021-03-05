@@ -1,6 +1,9 @@
 import { Probot } from "probot";
 import commands from "probot-commands";
 import { extractLabels } from "./extractLabels";
+import { config } from "dotenv";
+
+config(); // Read Camunda Cloud credentials from .env file
 
 module.exports = (app: Probot) => {
   // Inject Probot app into Zeebe controller, and get a ZBClient for use here
