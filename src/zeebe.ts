@@ -214,13 +214,5 @@ module.exports = (app: Probot) => {
     },
   });
 
-  zbc.createWorker({
-    taskType: "create-task",
-    taskHandler: async (job, complete) => {
-      const { repo, sender } = job.variables;
-      complete.success();
-    },
-  });
-
   return zbc;
 };
