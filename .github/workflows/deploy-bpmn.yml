@@ -3,7 +3,7 @@ name: "Deploy Workflows"
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - "bpmn/*"
 
