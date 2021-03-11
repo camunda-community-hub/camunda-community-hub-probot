@@ -39,5 +39,5 @@ For more, check out the [Contributing Guide](CONTRIBUTING.md).
 
 ## License
 
-[ISC](LICENSE) © 2021 Rin (they/them) <celanthe@users.noreply.github.com>
+[ISC](LICENSE) © 2021 Rin (they/them) <celanthe@users.noreply.github.com> & @jwulf
 > A GitHub App built with [Probot](https://github.com/probot/probot) 
