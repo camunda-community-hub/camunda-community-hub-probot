@@ -75,7 +75,7 @@
           <bpmn:incoming>Flow_1o25bs2</bpmn:incoming>
           <bpmn:outgoing>Flow_0awengv</bpmn:outgoing>
         </bpmn:serviceTask>
-        <bpmn:serviceTask id="Activity_0r6luyg" name="Create Tasklist Task for human oversight">
+        <bpmn:serviceTask id="Activity_0r6luyg" name="New repo in Community Hub, y&#39;all!">
           <bpmn:extensionElements>
             <zeebe:taskDefinition type="humanTask" retries="3" />
           </bpmn:extensionElements>
@@ -163,8 +163,9 @@
         <di:waypoint x="1782" y="420" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1rk6g6n_di" bpmnElement="Flow_1rk6g6n">
-        <di:waypoint x="1630" y="420" />
-        <di:waypoint x="1685" y="420" />
+        <di:waypoint x="1630" y="530" />
+        <di:waypoint x="1710" y="530" />
+        <di:waypoint x="1710" y="445" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1poozwz_di" bpmnElement="Flow_1poozwz">
         <di:waypoint x="1630" y="240" />
@@ -235,9 +236,6 @@
       <bpmndi:BPMNShape id="Activity_0zfphoh_di" bpmnElement="Activity_0zfphoh" isExpanded="true">
         <dc:Bounds x="780" y="400" width="850" height="260" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="TextAnnotation_0lnzmvc_di" bpmnElement="TextAnnotation_0lnzmvc">
-        <dc:Bounds x="1410" y="460" width="100" height="30" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1d7ndxd_di" bpmnElement="Flow_1d7ndxd">
         <di:waypoint x="1410" y="580" />
         <di:waypoint x="1532" y="580" />
@@ -261,6 +259,9 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0zxy8c5_di" bpmnElement="Event_0zxy8c5">
         <dc:Bounds x="1532" y="562" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0lnzmvc_di" bpmnElement="TextAnnotation_0lnzmvc">
+        <dc:Bounds x="1410" y="460" width="100" height="30" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_0hpiwhu_di" bpmnElement="Association_0hpiwhu">
         <di:waypoint x="1398" y="540" />

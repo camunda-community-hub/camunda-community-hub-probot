@@ -9,11 +9,11 @@ module.exports = (app: Probot) => {
   app.log("Yay! The app was loaded!");
 
   app.webhooks.onAny(async (context) => {
-    console.log("onAny", {
-      event: context.name,
-      action: context.payload.action,
-      context: context,
-    });
+    // console.log("onAny", {
+    //   event: context.name,
+    //   action: context.payload.action,
+    //   context: context,
+    // });
   });
 
   app.on("installation_repositories", (context) => {
