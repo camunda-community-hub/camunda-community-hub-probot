@@ -1,9 +1,7 @@
 import { Context, Probot } from "probot";
 
 import { ZBClient } from "zeebe-node";
-import { config } from "dotenv";
 
-config(); // Read Camunda Cloudcredentials from .env file
 const zbc = new ZBClient();
 
 interface NewRepoProcessPayload {
