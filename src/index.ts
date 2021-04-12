@@ -4,7 +4,7 @@ import { extractLabels } from "./extractLabels";
 import { healthcheck } from "healthchecks.io"; // TypeScript
 
 const url = "https://hc-ping.com/8688e7ea-45d1-4bf9-8e22-0828c707b4df";
-const check = healthcheck(url, 15);
+const check = healthcheck(url, 5);
 
 module.exports = (app: Probot) => {
   // Inject Probot app into Zeebe controller, and get a ZBClient for use here

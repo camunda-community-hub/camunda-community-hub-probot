@@ -8,3 +8,4 @@ lib
 .vscode
 scratch
 dist
+.DS_Store
