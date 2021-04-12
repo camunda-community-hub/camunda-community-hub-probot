@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "dotenv": "^8.2.0",
+    "healthchecks.io": "^2.1.1",
     "probot": "^11.0.1",
     "probot-commands": "^1.1.0",
     "zeebe-node": "^0.26.0"

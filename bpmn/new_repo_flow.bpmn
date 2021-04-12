@@ -75,7 +75,7 @@
           <bpmn:incoming>Flow_1o25bs2</bpmn:incoming>
           <bpmn:outgoing>Flow_0awengv</bpmn:outgoing>
         </bpmn:serviceTask>
-        <bpmn:serviceTask id="Activity_0r6luyg" name="New repo in Community Hub, y&#39;all!">
+        <bpmn:serviceTask id="Activity_0r6luyg" name="Review this new repo in the Community Hub">
           <bpmn:extensionElements>
             <zeebe:taskDefinition type="humanTask" retries="3" />
           </bpmn:extensionElements>
