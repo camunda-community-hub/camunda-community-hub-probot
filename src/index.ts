@@ -1,7 +1,7 @@
 import { Probot } from "probot";
 import commands from "probot-commands";
 import { extractLabels } from "./extractLabels";
-import { healthcheck } from "healthchecks.io"; // TypeScript
+import { healthcheck } from "healthchecks.io";
 import { config } from "dotenv";
 
 config(); // Read Camunda Cloudcredentials and healthcheck from .env file
@@ -9,6 +9,8 @@ const url = process.env.HEALTHCHECK_URL;
 if (!!url) {
   healthcheck(url, 5);
 }
+
+process.on('uncaughtException', e => console.log('Uncaught exception', e))
 
 module.exports = (app: Probot) => {
   // Inject Probot app into Zeebe controller, and get a ZBClient for use here
