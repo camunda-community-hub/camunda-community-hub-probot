@@ -60,7 +60,18 @@ module.exports = (app: Probot) => {
   app.on("issues.opened", async (context) => {
     // const params = context.issue({ body: "Hello World!" });
     // return context.octokit.issues.createComment(params);
+    const issue = context.issue()
+    const labels = await context.octokit.issues.listLabelsOnIssue(issue)
+    // if (labels.length > 0) {
+    console.log('Issue opened', 'Adding triage label')
+    return context.octokit.issues.addLabels({ ...issue, labels: ['triage'] });
+    // }
   });
+
+  app.on("issues.labeled", async (context) => {
+    const issue = context.issue()
+    console.log('Issues labelled', issue)
+  })
 
   app.on("issue_comment.created", async (context) => {
     //gfg
