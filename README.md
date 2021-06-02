@@ -11,6 +11,8 @@ Usage: To add a label to an open issue, in the 'Leave a Comment' space enter the
 ```
 Once your comment is posted, after a few moments, the bot should apply the label you specified. To see the list of labels available to you in the Camunda Community Hub, please review our [steps for issue triage and labelling](https://github.com/camunda-community-hub/community/blob/main/issue-triage.md). For more information on extension lifecycles and how to implement them, please [read the documentation](https://github.com/camunda-community-hub/community/blob/main/extension-lifecycle.md).
 
+If you open an issue without a label, Probot will automatically assign the 'triage' label to your issue. Once an issue label is added, the triage label will be removed. If your issue has labels applied to it before submitting the issue, the 'triage' label will not be applied.
+
 ## Setup
 
 ```sh
