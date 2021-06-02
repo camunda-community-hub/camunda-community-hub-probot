@@ -61,16 +61,21 @@ module.exports = (app: Probot) => {
     // const params = context.issue({ body: "Hello World!" });
     // return context.octokit.issues.createComment(params);
     const issue = context.issue()
-    const labels = await context.octokit.issues.listLabelsOnIssue(issue)
-    // if (labels.length > 0) {
-    console.log('Issue opened', 'Adding triage label')
-    return context.octokit.issues.addLabels({ ...issue, labels: ['triage'] });
-    // }
+    const labels = (await context.octokit.issues.listLabelsOnIssue(issue)).data
+    if (labels.length == 0) {
+      console.log('Issue opened', 'Adding triage label')
+      return context.octokit.issues.addLabels({ ...issue, labels: ['triage'] });
+    }
   });
 
   app.on("issues.labeled", async (context) => {
     const issue = context.issue()
     console.log('Issues labelled', issue)
+    const labels = (await context.octokit.issues.listLabelsOnIssue(issue)).data
+    const hasTriageLabel = labels.filter(l => l.name === 'triage').length > 0
+    if (hasTriageLabel && labels.length > 1) {
+      return context.octokit.issues.removeLabel({ ...issue, name: 'triage' });
+    }
   })
 
   app.on("issue_comment.created", async (context) => {
