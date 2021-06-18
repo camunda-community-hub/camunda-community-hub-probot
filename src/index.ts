@@ -3,6 +3,7 @@ import commands from "probot-commands";
 import { extractLabels } from "./extractLabels";
 import { healthcheck } from "healthchecks.io";
 import { config } from "dotenv";
+import { handlePullRequestChange } from "./handle-pull-request-change";
 
 config(); // Read Camunda Cloudcredentials and healthcheck from .env file
 const url = process.env.HEALTHCHECK_URL;
@@ -25,6 +26,14 @@ module.exports = (app: Probot) => {
     //   context: context,
     // });
   });
+
+  app.on([
+    "pull_request.opened",
+    "pull_request.edited",
+    "pull_request.labeled",
+    "pull_request.unlabeled",
+    "pull_request.synchronize",
+  ], context => handlePullRequestChange(app, context));
 
   app.on("installation_repositories", (context) => {
     if (context.payload.action === "added") {
@@ -74,6 +83,7 @@ module.exports = (app: Probot) => {
     const labels = (await context.octokit.issues.listLabelsOnIssue(issue)).data
     const hasTriageLabel = labels.filter(l => l.name === 'triage').length > 0
     if (hasTriageLabel && labels.length > 1) {
+      console.log('Issue labelled', 'Removing triage label')
       return context.octokit.issues.removeLabel({ ...issue, name: 'triage' });
     }
   })
