@@ -35,6 +35,11 @@ module.exports = (app: Probot) => {
     "pull_request.synchronize",
   ], context => handlePullRequestChange(app, context));
 
+  app.on("check_run.rerequested", (event) => {
+    console.log("Check run rerequested")
+    console.log(event.payload)
+  })
+
   app.on("installation_repositories", (context) => {
     if (context.payload.action === "added") {
       // How do we discriminate between a transfer and a straight-up new repo?
