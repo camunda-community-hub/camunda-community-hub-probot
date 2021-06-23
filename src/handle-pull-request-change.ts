@@ -87,6 +87,7 @@ export async function handlePullRequestChange(app: Probot, context: WebhookEvent
             completed_at: new Date().toISOString(),
             output: {
                 title: "Correctly labelled for Release Drafter",
+                summary: "Congratulations, you correctly labelled this pull request for the Release Drafter to automatically add it to the Release Notes draft"
             },
         }
         return context.octokit.checks.create(context.repo(checkOptions));
