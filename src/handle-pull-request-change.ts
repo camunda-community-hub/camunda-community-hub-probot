@@ -45,7 +45,7 @@ export async function handlePullRequestChange(app: Probot, context: WebhookEvent
     // Is one of "feature", "fix", "chore" present on the PR? AND "triage" is not present?
     const labels = pr.labels;
     const hasTriageLabel = !!labels.find(l => l.name === "triage")
-    const hasRequiredLabel = labels.filter(l => requiredLabels.includes(l.name)).length === 1;
+    const hasRequiredLabel = labels.filter(l => requiredLabels.includes(l.name.toLowerCase())).length === 1;
 
     log(`hasTriageLabel: ${hasTriageLabel}, hasRequiredLabel: ${hasRequiredLabel}`);
 
