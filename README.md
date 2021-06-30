@@ -37,7 +37,7 @@ To learn more about Release Drafter, we suggest [reading the official documentat
 
 If you are running into issues with Probot, please [Open an Issue](https://github.com/camunda-community-hub/camunda-community-hub-probot/issues). If you see a bug, or something that you would like to fix or contribute to, please [open a pull request](https://github.com/camunda-community-hub/camunda-community-hub-probot/pulls) after reviewing our [contribution guidelines](https://github.com/camunda-community-hub/camunda-community-hub-probot/blob/main/CONTRIBUTING.md).
 
-If a label is incorrectly applied, you can remove it by typing </code>/lm remove</code> along with the [name of the label](https://github.com/camunda-community-hub/camunda-community-hub-probot/labels)
+If a label is incorrectly applied, you can remove it by typing <code>/lm remove</code> along with the [name of the label](https://github.com/camunda-community-hub/camunda-community-hub-probot/labels)
 
 ### Setup
 
