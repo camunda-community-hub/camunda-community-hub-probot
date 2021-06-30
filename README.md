@@ -33,7 +33,13 @@ To learn more about Release Drafter, we suggest [reading the official documentat
 4. Currently, if a check fails, it must be re-run manually. We hope to automate this in the future.
 5. If you have no labels on a PR and you choose to merge it, it will not be included in the automated release notes.
 
-## Setup
+### Troubleshooting
+
+If you are running into issues with Probot, please [Open an Issue](https://github.com/camunda-community-hub/camunda-community-hub-probot/issues). If you see a bug, or something that you would like to fix or contribute to, please [open a pull request](https://github.com/camunda-community-hub/camunda-community-hub-probot/pulls) after reviewing our [contribution guidelines](https://github.com/camunda-community-hub/camunda-community-hub-probot/blob/main/CONTRIBUTING.md).
+
+If a label is incorrectly applied, you can remove it by typing </code>/lm remove</code> along with the [name of the label](https://github.com/camunda-community-hub/camunda-community-hub-probot/labels)
+
+### Setup
 
 ```sh
 # Install dependencies
@@ -43,7 +49,7 @@ npm install
 npm start
 ```
 
-## Docker
+### Docker
 
 ```sh
 # 1. Build container
@@ -53,13 +59,13 @@ docker build -t camunda-community-hub-probot .
 docker run -e APP_ID=<app-id> -e PRIVATE_KEY=<pem-value> camunda-community-hub-probot
 ```
 
-## Contributing
+### Contributing
 
 If you have suggestions for how camunda-community-hub-probot could be improved, or want to report a bug, open an issue! We'd love all and any contributions.
 
 For more, check out the [Contributing Guide](CONTRIBUTING.md).
 
-## License
+### License
 
 [ISC](LICENSE) © 2021 Rin (they/them) <celanthe@users.noreply.github.com> & [@jwulf](https://github.com/jwulf).
 
