@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/Lifecycle-Proof%20of%20Concept-blueviolet">
+<img src="https://img.shields.io/badge/Camunda%20DevRel%20Project-Created%20by%20the%20Camunda%20Developer%20Relations%20team-0Ba7B9"> [![Community Extension](https://img.shields.io/badge/Community%20Extension-An%20open%20source%20community%20maintained%20project-FF4700)](https://github.com/camunda-community-hub/community) <img src="https://img.shields.io/badge/Lifecycle-Proof%20of%20Concept-blueviolet">
 
 # Camunda Community Hub Probot
 
