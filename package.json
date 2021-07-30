@@ -18,7 +18,7 @@
   "dependencies": {
     "axios": "0.21.1",
     "dotenv": "8.6.0",
-    "healthchecks.io": "2.1.1",
+    "healthchecks.io": "2.2.0",
     "probot": "11.0.6",
     "probot-commands": "1.1.0",
     "zeebe-node": "0.26.0"
