@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1wb4hjy" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Zeebe Modeler" exporterVersion="0.11.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1wb4hjy" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.9.0">
   <bpmn:process id="new-repo-flow" name="New Repo Flow" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1" name="Repo moved to Community Hub">
       <bpmn:outgoing>Flow_0cfybhp</bpmn:outgoing>
@@ -75,7 +75,7 @@
           <bpmn:incoming>Flow_1o25bs2</bpmn:incoming>
           <bpmn:outgoing>Flow_0awengv</bpmn:outgoing>
         </bpmn:serviceTask>
-        <bpmn:serviceTask id="Activity_0r6luyg" name="Review this new repo in the Community Hub">
+        <bpmn:serviceTask id="Activity_0r6luyg" name="=repo + &#34;added to Community Hub&#34;">
           <bpmn:extensionElements>
             <zeebe:taskDefinition type="humanTask" retries="3" />
           </bpmn:extensionElements>
