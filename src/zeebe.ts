@@ -54,7 +54,7 @@ module.exports = (app: Probot) => {
       };
       console.log("give-maintainer-permissions", req);
       const res = await octokit.repos.addCollaborator(req);
-      complete.success({ maintainer_data: res });
+      return job.complete({ maintainer_data: res });
     },
   });
 
@@ -64,7 +64,7 @@ module.exports = (app: Probot) => {
       const { repo, sender } = job.variables;
       // Create a PR to add this badge to the README:
       // https://img.shields.io/badge/Community%20Extension-An%20open%20source%20community%20maintained%20project-FF4700
-      complete.success();
+      return job.complete();
     },
   });
 
@@ -159,7 +159,7 @@ module.exports = (app: Probot) => {
         )
         .filter(removeBlank);
 
-      Promise.all(
+      await Promise.all(
         updateLabels.map((label) =>
           octokit.issues.updateLabel({
             repo,
@@ -168,7 +168,7 @@ module.exports = (app: Probot) => {
           })
         )
       );
-      complete.success({
+      return job.complete({
         addLabels: `Added ${Object.keys(newLabelsDictionary).join(",")}.`,
       });
     },
@@ -195,7 +195,7 @@ module.exports = (app: Probot) => {
           repo,
         });
       }
-      complete.success({
+      return job.complete({
         topics: alreadyHasLabel
           ? `Already has ${LABEL} topic`
           : `Added ${LABEL} topic`,
@@ -208,7 +208,7 @@ module.exports = (app: Probot) => {
     taskHandler: async (job, complete) => {
       const { repo, sender } = job.variables;
       console.log(`${sender} transferred ${repo} into the Community Hub`);
-      complete.success();
+      return job.complete();
     },
   });
 
