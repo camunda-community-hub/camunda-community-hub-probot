@@ -1,4 +1,3 @@
-import { EmitterWebhookEvent, Webhooks } from "@octokit/webhooks";
 import { Context, Probot } from "probot";
 import axios from "axios";
 
@@ -75,7 +74,7 @@ export async function handlePullRequestChange(app: Probot, context: Context<"pul
                 summary: helpMessage
             },
         }
-        return context.octokit.checks.create(context.repo(checkOptions));
+        return context.octokit.checks.create(checkOptions);
     } else {
         // pass check
         const checkOptions = {
@@ -90,7 +89,7 @@ export async function handlePullRequestChange(app: Probot, context: Context<"pul
                 summary: "Congratulations, you correctly labelled this pull request for the Release Drafter to automatically add it to the Release Notes draft"
             },
         }
-        return context.octokit.checks.create(context.repo(checkOptions));
+        return context.octokit.checks.create(checkOptions);
     }
     
 }
