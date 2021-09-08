@@ -1,4 +1,3 @@
-import { WebhookEvent, EventPayloads } from "@octokit/webhooks";
 import { Context, Probot } from "probot";
 import axios from "axios";
 
@@ -21,12 +20,12 @@ import axios from "axios";
  * 
  * This is opt-in. You opt-in by labelling the repo with "release-drafter".
  */
-export async function handlePullRequestChange(app: Probot, context: WebhookEvent<EventPayloads.WebhookPayloadPullRequest> & Omit<Context<any>, keyof WebhookEvent<any>>) {
+export async function handlePullRequestChange(app: Probot, context: Context<"pull_request">) { 
     const log = context.log;
 
     const requiredLabels = ["chore", "feature", "fix"];
 
-    const { action, pull_request: pr, repository: repo } = context.payload;
+    const { pull_request: pr, repository: repo } = context.payload;
 
     // Check if the repo has opted-in - does it have the label "release-drafter"
     const {data: {names: topics}} = await axios.get(`https://api.github.com/repos/camunda-community-hub/${repo.name}/topics`, {
@@ -40,6 +39,8 @@ export async function handlePullRequestChange(app: Probot, context: WebhookEvent
         log(`Release Drafter not enabled for repo ${repo.name}`);
         return;
     }
+
+    log(`Release Drafter check for repo ${repo.name}`);
 
     // Check the labels on the PR
     // Is one of "feature", "fix", "chore" present on the PR? AND "triage" is not present?
@@ -62,6 +63,8 @@ export async function handlePullRequestChange(app: Probot, context: WebhookEvent
         } else {
             helpMessage = `${intro} ${addRequiredLabelMsg}`
         }
+        log(`Failed Release Drafter check:`);
+        log(helpMessage);
         // fail check
         const checkOptions = {
             name: 'Community Probot',
@@ -75,7 +78,7 @@ export async function handlePullRequestChange(app: Probot, context: WebhookEvent
                 summary: helpMessage
             },
         }
-        return context.octokit.checks.create(context.repo(checkOptions));
+        return context.octokit.checks.create(checkOptions);
     } else {
         // pass check
         const checkOptions = {
@@ -90,7 +93,8 @@ export async function handlePullRequestChange(app: Probot, context: WebhookEvent
                 summary: "Congratulations, you correctly labelled this pull request for the Release Drafter to automatically add it to the Release Notes draft"
             },
         }
-        return context.octokit.checks.create(context.repo(checkOptions));
+        log(`Passed Release Drafter check`);
+        return context.octokit.checks.create(checkOptions);
     }
     
 }
