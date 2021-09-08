@@ -1,4 +1,4 @@
-import { Probot } from "probot";
+import { Probot, Context } from "probot";
 import commands from "probot-commands";
 import { extractLabels } from "./extractLabels";
 import { healthcheck } from "healthchecks.io";
@@ -102,7 +102,7 @@ module.exports = (app: Probot) => {
   commands(
     app,
     "lm",
-    (context: ProbotCommandContext, command: ProbotCommand) => {
+    (context: Context, command: ProbotCommand) => {
       const { labels, cmd } = extractLabels(command.arguments);
       if (labels.length === 0) {
         context.log("No labels specified. Received:", command.arguments);
@@ -111,10 +111,10 @@ module.exports = (app: Probot) => {
 
       if (cmd == "add") {
         context.log("Adding labels:", labels);
-        return context.github.issues.addLabels(context.issue({ labels }));
+        return context.octokit.issues.addLabels(context.issue({ labels }));
       } else if (cmd == "remove") {
         const removeLabel = (name: string) =>
-          context.github.issues.removeLabel(context.issue({ name }));
+          context.octokit.issues.removeLabel(context.issue({ name }));
         labels.forEach(removeLabel);
       } else {
         //gfg
@@ -122,7 +122,7 @@ module.exports = (app: Probot) => {
           body:
             "Improper command. Follow the syntax: /lm [add/remove] label1 label2 label3",
         });
-        return context.github.issues.createcomment(params);
+        return context.octokit.issues.createComment(params);
       }
     }
   );
@@ -133,12 +133,6 @@ module.exports = (app: Probot) => {
 
 // To get your app running against GitHub, see:
 // https://probot.github.io/docs/development/
-
-interface ProbotCommandContext {
-  github: any;
-  issue: any;
-  log: (message: string, ...messages: any[]) => void;
-}
 
 interface ProbotCommand {
   arguments: string;
