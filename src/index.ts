@@ -18,6 +18,10 @@ module.exports = (app: Probot) => {
   const zbc = require("./zeebe")(app);
 
   app.log("Yay! The app was loaded!");
+  
+  if ((process.env.OCTOKIT_DEBUG || 'false').toUpperCase() === 'TRUE') {
+    app.log.debug = console.debug;
+  }
 
   app.webhooks.onAny(async (context) => {
     console.log("onAny", {
