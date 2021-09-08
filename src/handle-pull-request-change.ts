@@ -1,4 +1,4 @@
-import { WebhookEvent, EventPayloads } from "@octokit/webhooks";
+import { EmitterWebhookEvent, Webhooks } from "@octokit/webhooks";
 import { Context, Probot } from "probot";
 import axios from "axios";
 
@@ -21,7 +21,7 @@ import axios from "axios";
  * 
  * This is opt-in. You opt-in by labelling the repo with "release-drafter".
  */
-export async function handlePullRequestChange(app: Probot, context: WebhookEvent<EventPayloads.WebhookPayloadPullRequest> & Omit<Context<any>, keyof WebhookEvent<any>>) {
+export async function handlePullRequestChange(app: Probot, context: Context<"pull_request">) { 
     const log = context.log;
 
     const requiredLabels = ["chore", "feature", "fix"];
