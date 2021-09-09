@@ -59,9 +59,11 @@ docker build -t camunda-community-hub-probot .
 docker run -e APP_ID=<app-id> -e PRIVATE_KEY=<pem-value> camunda-community-hub-probot
 ```
 
-## Debugging Octokit
+## Debug logging
 
-Set the environment variable `OCTOKIT_DEBUG=TRUE` to turn on debug logging.
+Set the environment variable `OCTOKIT_DEBUG=TRUE` to turn on debug logging for octokit.
+
+Set `DEBUG_LOG_REQUESTS=TRUE` to log out all incoming webhook requests.
 
 ### Contributing
 
