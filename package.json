@@ -16,7 +16,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@octokit/webhooks": "9.14.1",
+    "@octokit/webhooks": "9.26.0",
     "axios": "0.21.4",
     "dotenv": "10.0.0",
     "healthchecks.io": "2.2.0",
